@@ -1,0 +1,21 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "_variables.scss";
+@import "_typography.scss";
+
+body {
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+}
+
+.page-section {
+  padding: 4rem 1rem;
+  background: #000;
+}
+
+.page-container {
+  max-width: min(800px, 100%);
+  margin: 0 auto;
+}
