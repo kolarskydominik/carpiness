@@ -1,0 +1,201 @@
+:host {
+  display: block;
+}
+
+.navbar {
+  @apply fixed
+  left-0
+  right-0
+  top-0
+  z-50
+  grid
+  whitespace-nowrap
+  transition-all
+  duration-300;
+}
+
+.navbar_container {
+  @apply mx-auto
+  flex
+  w-full
+  max-w-screen-xl
+  justify-between
+  px-4
+  transition-all
+  duration-300;
+}
+
+.navbar_menu_desktop {
+  @apply hidden
+  transition-all
+  duration-300
+  md:flex 
+  md:items-center 
+  md:justify-between 
+  md:gap-3
+  md:text-lg
+  lg:gap-6
+  lg:text-xl;
+}
+
+.navbar_menu_desktop:hover .navbar_menu_link {
+  @apply opacity-60;
+}
+
+.navbar_menu_desktop .navbar_menu_link:hover {
+  @apply border-black
+  opacity-100;
+}
+
+.navbar_menu_mobile {
+  @apply absolute
+  left-0
+  right-0
+  top-0
+  -z-[1]
+  h-screen
+  -translate-y-full
+  overflow-auto
+  bg-[var(--color-dark)]
+  px-8
+  pb-12
+  pt-20
+  text-white;
+
+  .navbar_menu_link_mobile {
+    @apply relative
+    border-b-2 
+    border-transparent
+    pt-2
+    text-2xl
+    font-semibold
+    transition-all 
+    duration-300;
+  }
+
+  .navbar_childmenu_mobile {
+    @apply pl-2
+    text-base
+    font-medium;
+  }
+
+  .navbar_sub_childmenu_mobile {
+    @apply pl-2
+    text-sm
+    font-normal;
+  }
+}
+
+.navbar_menu_mobile.open {
+  @apply -translate-y-0;
+}
+
+.navbar_menu_link {
+  @apply relative 
+  border-b-2
+  border-transparent
+  transition-all 
+  duration-300;
+}
+
+.navbar_menu_cta {
+  @apply lg:text-xl;
+
+  &_mobile {
+    @apply absolute
+    bottom-0
+    left-1/2
+    -translate-x-1/2
+    -translate-y-10
+    text-xl;
+  }
+}
+
+.navbar_childmenu {
+  @apply absolute 
+  left-0 
+  top-5 
+  z-50
+  mt-4
+  grid 
+  w-min
+  gap-3
+  bg-[var(--color-dark)]
+  p-4
+  text-white 
+  shadow-md;
+
+  a:hover {
+    @apply border-b-2;
+  }
+}
+
+.navbar_sub_childmenu {
+  @apply text-base;
+
+  li {
+    @apply mt-2;
+  }
+}
+
+.hamburger {
+  @apply grid 
+  cursor-pointer
+  place-content-center
+  md:hidden;
+}
+
+.hamburger_icon {
+  @apply relative
+  h-1
+  w-12
+  -translate-y-1
+  rounded-sm
+  bg-black
+  transition-all
+  duration-300;
+
+  &::after {
+    @apply absolute
+    right-0
+    h-1
+    w-8
+    translate-y-3
+    rounded-sm
+    bg-black
+    transition-all
+    duration-300
+    content-[""];
+  }
+}
+
+.hamburger_toggle {
+  .hamburger_icon {
+    @apply w-7
+    -translate-x-1
+    translate-y-0
+    rotate-45
+    bg-white;
+
+    &::after {
+      @apply w-7
+      translate-y-0
+      -rotate-90
+      bg-white;
+    }
+  }
+}
+
+.logo {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  @apply w-40
+  transition-all
+  duration-300;
+}
+
+.logo_wrapper {
+  grid-template: 1fr / 1fr;
+  @apply grid
+  place-items-center;
+}

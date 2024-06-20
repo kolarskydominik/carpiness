@@ -1,0 +1,155 @@
+<nav
+  id="navbar"
+  class="navbar"
+  (scroll)="onScroll()"
+  [ngClass]="isNavbarScrolled ? 'h-16 md:h-20 bg-white' : 'h-16 md:h-28'"
+>
+  <div
+    class="navbar_container"
+    [ngClass]="isHamburgerOpen ? 'border-b-[1px] border-white/10' : ''"
+  >
+    <div class="logo_wrapper">
+      <img
+        src="assets/carpiness_logo_b.svg"
+        alt="logo"
+        class="logo"
+        [ngClass]="isHamburgerOpen ? 'opacity-0' : 'opacity-100'"
+      />
+      <img
+        src="assets/carpiness_logo_w.svg"
+        alt="logo"
+        class="logo"
+        [ngClass]="isHamburgerOpen ? 'opacity-100' : 'opacity-0'"
+      />
+    </div>
+
+    <div
+      id="hamburger"
+      class="hamburger"
+      (click)="toggleHamburger()"
+      [ngClass]="isHamburgerOpen ? 'hamburger_toggle' : ''"
+    >
+      <div class="hamburger_icon"></div>
+    </div>
+
+    <!-- desktop -->
+    <ul class="navbar_menu_desktop">
+      @for (link of menu; track $index) {
+        @if (!link.path && link.children) {
+          <li
+            class="navbar_menu_link"
+            (mouseenter)="toggleChildMenu($index)"
+            (mouseleave)="toggleChildMenu($index)"
+          >
+            <a [routerLink]="link.path" [fragment]="link.fragment">{{
+              link.label
+            }}</a>
+            <ul
+              class="navbar_childmenu"
+              [@toggleChildMenu]="childMenuState[$index] || 'closed'"
+            >
+              @for (childLink of link.children; track $index) {
+                <li>
+                  <a
+                    [routerLink]="childLink.path"
+                    [fragment]="childLink.fragment"
+                  >
+                    {{ childLink.label }}
+                  </a>
+                  @if (childLink.children) {
+                    <ul class="navbar_sub_childmenu">
+                      @for (subChildLink of childLink.children; track $index) {
+                        <li>
+                          <a
+                            [routerLink]="subChildLink.path"
+                            [fragment]="subChildLink.fragment"
+                          >
+                            {{ subChildLink.label }}
+                          </a>
+                        </li>
+                      }
+                    </ul>
+                  }
+                </li>
+              }
+            </ul>
+          </li>
+        } @else {
+          @if (link.variant === "cta") {
+            <li class="navbar_menu_cta">
+              <app-cta-button type="link" [link]="link">
+                {{ link.label }}
+              </app-cta-button>
+            </li>
+          } @else {
+            <li class="navbar_menu_link">
+              <a [routerLink]="link.path" [fragment]="link.fragment">{{
+                link.label
+              }}</a>
+            </li>
+          }
+        }
+      }
+    </ul>
+
+    <!-- mobile -->
+    <ul class="navbar_menu_mobile" [ngClass]="isHamburgerOpen ? 'open' : ''">
+      @for (link of menu; track $index) {
+        @if (!link.path && link.children) {
+          <li
+            class="navbar_menu_link_mobile"
+            (mouseenter)="toggleChildMenu($index)"
+            (mouseleave)="toggleChildMenu($index)"
+          >
+            <a [routerLink]="link.path" [fragment]="link.fragment">{{
+              link.label
+            }}</a>
+            <ul
+              class="navbar_childmenu_mobile"
+              [@toggleChildMenu]="childMenuState[$index] || 'closed'"
+            >
+              @for (childLink of link.children; track $index) {
+                <li>
+                  <a
+                    [routerLink]="childLink.path"
+                    [fragment]="childLink.fragment"
+                  >
+                    {{ childLink.label }}
+                  </a>
+                  @if (childLink.children) {
+                    <ul class="navbar_sub_childmenu_mobile">
+                      @for (subChildLink of childLink.children; track $index) {
+                        <li>
+                          <a
+                            [routerLink]="subChildLink.path"
+                            [fragment]="subChildLink.fragment"
+                          >
+                            {{ subChildLink.label }}
+                          </a>
+                        </li>
+                      }
+                    </ul>
+                  }
+                </li>
+              }
+            </ul>
+          </li>
+        } @else {
+          @if (link.variant === "cta") {
+            <li class="navbar_menu_cta_mobile">
+              <app-cta-button type="link" [link]="link">
+                {{ link.label }}
+              </app-cta-button>
+            </li>
+          } @else {
+            <li class="navbar_menu_link_mobile">
+              <a [routerLink]="link.path" [fragment]="link.fragment">{{
+                link.label
+              }}</a>
+            </li>
+          }
+        }
+      }
+    </ul>
+  </div>
+</nav>

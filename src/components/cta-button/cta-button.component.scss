@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.cta {
+  @apply rounded-full px-8 py-4 transition-all duration-300;
+}
+
+.primary {
+  @apply bg-black text-white hover:bg-[var(--color-hover)] hover:text-black
+}
+
+.secondary {
+  @apply hover:bg-black hover:text-white bg-[var(--color-hover)] text-black
+}

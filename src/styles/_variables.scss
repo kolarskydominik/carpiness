@@ -1,7 +1,7 @@
 :root {
   --color-black-03: rgba(0, 0, 0, 0.03);
-  --color-gray-10: #1b1b1b1a;
-  --color-gray-50: #1b1b1b80;
+  --color-gray-10: rgba(27, 27, 27, 0.1);
+  --color-gray-50: rgba(27, 27, 27, 0.5);
 
   --color-dark: #1d1d1f;
   --color-gray1: #bcbcbc;
@@ -11,6 +11,6 @@
 
   --color-fg: var(--color-dark);
   --color-bg: var(--color-white1);
-  --color-hover: var(--color-black-03);
+  --color-hover: var(--color-gray-10);
   --color-overlay: var(--color-black-03);
 }
