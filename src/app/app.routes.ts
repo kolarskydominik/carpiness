@@ -64,4 +64,22 @@ export const routes: Routes = [
         (m) => m.AboutUsComponent,
       ),
   },
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('../containers/contact/contact.component').then(
+        (m) => m.ContactComponent,
+      ),
+  },
+  {
+    path: 'careers',
+    loadComponent: () =>
+      import('../containers/careers/careers.component').then(
+        (m) => m.CareersComponent,
+      ),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];
