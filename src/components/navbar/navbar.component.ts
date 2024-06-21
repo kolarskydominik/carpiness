@@ -45,7 +45,7 @@ export class NavbarComponent {
   menu: MenuItem[] = menu;
   childMenuState: { [key: number]: string } = {};
   isNavbarScrolled: boolean = false;
-  isHamburgerOpen: boolean = true;
+  isHamburgerOpen: boolean = false;
 
   @HostListener('window:scroll', ['$event']) onScroll() {
     if (window.scrollY > 50) {

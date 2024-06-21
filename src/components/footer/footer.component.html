@@ -1,0 +1,54 @@
+<footer>
+  <div class="footer_container">
+    <div class="footer_wrapper">
+      <div>
+        <img src="assets/carpiness_logo_b.svg" alt="logo" class="w-32" />
+      </div>
+      <div>
+        <ul class="footer_links">
+          @for (link of footerLinks; track $index) {
+            <li>
+              <a
+                class="footer_link"
+                [routerLink]="link.path"
+                [fragment]="link.fragment"
+              >
+                {{ link.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div class="footer_contacts">
+        <a href="mailto:info@carpiness.com">info&#64;carpiness.com</a>
+        <a href="tel:+420601008818">+420 601 00 88 18</a>
+      </div>
+      <div class="footer_address">
+        <p>Carpiness s.r.o.</p>
+        <p>
+          Pod pekárnami 245/10 <br />
+          190 00, Praha - Vysočany <br />
+          Česká republika
+        </p>
+        <p>
+          IČO: 24249297 <br />
+          DIČ: CZ 24249297 <br />
+          Společnost je registrovaným plátcem DPH
+        </p>
+      </div>
+    </div>
+    <div class="footer_copyright">
+      <p class="copyright">
+        <span> © 2024 Carpiness s.r.o. </span>
+        <span> All Rights Reserved. </span>
+      </p>
+      <p class="footer_socials">
+        <a
+          class="footer_link"
+          href="https://www.linkedin.com/in/kolarskydominik/"
+          >LinkedIn</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>

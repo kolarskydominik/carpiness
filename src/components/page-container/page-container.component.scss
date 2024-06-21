@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+.page-container {
+  @apply mx-auto
+ max-w-[min(800px,100%)];
+}
