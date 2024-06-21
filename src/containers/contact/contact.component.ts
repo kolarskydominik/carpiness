@@ -2,15 +2,15 @@ import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-advisory',
+  selector: 'app-contact',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './advisory.component.html',
-  styleUrl: './advisory.component.scss',
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AdvisoryComponent {}
+export class ContactComponent {}
 
-export default AdvisoryComponent;
+export default ContactComponent;
