@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core'; // Import ElementRef
 import { MenuItem, menu } from '../../menu';
 import { RouterModule } from '@angular/router';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
@@ -47,6 +47,8 @@ export class NavbarComponent {
   isNavbarScrolled: boolean = false;
   isHamburgerOpen: boolean = false;
 
+  constructor(private elementRef: ElementRef) {}
+
   @HostListener('window:scroll', ['$event']) onScroll() {
     if (window.scrollY > 50) {
       this.isNavbarScrolled = true;
@@ -57,6 +59,14 @@ export class NavbarComponent {
 
   @HostListener('window:resize', ['$event']) onResize() {
     if (window.innerWidth > 768) {
+      this.isHamburgerOpen = false;
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event: Event) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      // Clicked outside, perform your action here
       this.isHamburgerOpen = false;
     }
   }

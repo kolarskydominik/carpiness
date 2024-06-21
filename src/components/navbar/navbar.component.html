@@ -6,7 +6,7 @@
 >
   <div
     class="navbar_container"
-    [ngClass]="isHamburgerOpen ? 'border-b-[1px] border-white/10' : ''"
+    [ngClass]="isHamburgerOpen ? 'border-b-[1px] border-white/10 bg-[var(--color-dark)]' : ''"
   >
     <div class="logo_wrapper">
       <img
@@ -137,7 +137,7 @@
         } @else {
           @if (link.variant === "cta") {
             <li class="navbar_menu_cta_mobile">
-              <app-cta-button type="link" [link]="link">
+              <app-cta-button type="link" [link]="link" variant="secondary">
                 {{ link.label }}
               </app-cta-button>
             </li>

@@ -1,7 +1,6 @@
 :host {
   display: block;
 }
-
 .navbar {
   @apply fixed
   left-0
@@ -53,41 +52,56 @@
   right-0
   top-0
   -z-[1]
-  h-screen
+  flex
+  h-svh
   -translate-y-full
+  flex-col
   overflow-auto
   bg-[var(--color-dark)]
   px-8
-  pb-12
+  pb-4
   pt-20
   text-white;
 
-  .navbar_menu_link_mobile {
-    @apply relative
-    border-b-2 
-    border-transparent
-    pt-2
-    text-2xl
-    font-semibold
-    transition-all 
-    duration-300;
-  }
-
   .navbar_childmenu_mobile {
     @apply pl-2
-    text-base
+    text-xl
     font-medium;
   }
 
   .navbar_sub_childmenu_mobile {
     @apply pl-2
-    text-sm
+    text-lg
     font-normal;
   }
 }
 
 .navbar_menu_mobile.open {
   @apply -translate-y-0;
+}
+
+.navbar_menu_link_mobile {
+  @apply relative
+  border-b-2 
+  border-transparent
+  pt-2
+  text-3xl
+  font-semibold
+  transition-all 
+  duration-300;
+}
+
+.navbar_menu_cta_mobile {
+  @apply z-10
+  mt-auto
+  mx-auto
+  py-4
+  pt-8
+  text-xl;
+
+  a {
+    @apply bg-red-500
+  }
 }
 
 .navbar_menu_link {
@@ -100,15 +114,6 @@
 
 .navbar_menu_cta {
   @apply lg:text-xl;
-
-  &_mobile {
-    @apply absolute
-    bottom-0
-    left-1/2
-    -translate-x-1/2
-    -translate-y-10
-    text-xl;
-  }
 }
 
 .navbar_childmenu {
@@ -149,11 +154,11 @@
   @apply relative
   h-1
   w-12
+  -translate-x-1
   -translate-y-1
   rounded-sm
   bg-black
   transition-all
-  -translate-x-1
   duration-300;
 
   &::after {
