@@ -63,45 +63,53 @@
   pt-20
   text-white;
 
+  .link_mobile {
+    @apply relative
+    border-b-2 
+    border-transparent
+    pt-2
+    text-3xl
+    font-semibold
+    transition-all 
+    duration-300;
+  }
+
+  .cta_mobile {
+    @apply z-10
+    mx-auto
+    mt-auto
+    py-4
+    pt-8
+    text-xl;
+
+    a {
+      @apply bg-red-500;
+    }
+  }
+
   .navbar_childmenu_mobile {
-    @apply pl-2
-    text-xl
-    font-medium;
+    @apply pl-2;
+
+    .link_mobile {
+      @apply text-xl
+      font-semibold
+      leading-snug;
+    }
   }
 
   .navbar_sub_childmenu_mobile {
-    @apply pl-2
-    text-lg
-    font-normal;
+    @apply pl-2;
+
+    .link_mobile {
+      @apply text-lg
+      font-normal
+      leading-snug;
+    }
   }
 }
 
 .navbar_menu_mobile.open {
   @apply -translate-y-0;
-}
-
-.navbar_menu_link_mobile {
-  @apply relative
-  border-b-2 
-  border-transparent
-  pt-2
-  text-3xl
-  font-semibold
-  transition-all 
-  duration-300;
-}
-
-.navbar_menu_cta_mobile {
-  @apply z-10
-  mt-auto
-  mx-auto
-  py-4
-  pt-8
-  text-xl;
-
-  a {
-    @apply bg-red-500
-  }
 }
 
 .navbar_menu_link {

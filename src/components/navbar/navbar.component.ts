@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core'; // Import ElementRef
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { MenuItem, menu } from '../../menu';
 import { RouterModule } from '@angular/router';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
@@ -42,13 +48,16 @@ import {
   ],
 })
 export class NavbarComponent {
+  @ViewChildren('mobileLink') mobileLinks!: QueryList<ElementRef>;
   menu: MenuItem[] = menu;
   childMenuState: { [key: number]: string } = {};
   isNavbarScrolled: boolean = false;
   isHamburgerOpen: boolean = false;
 
+
   constructor(private elementRef: ElementRef) {}
 
+  // * listeners
   @HostListener('window:scroll', ['$event']) onScroll() {
     if (window.scrollY > 25) {
       this.isNavbarScrolled = true;
@@ -63,14 +72,21 @@ export class NavbarComponent {
     }
   }
 
-  @HostListener('document:click', ['$event'])
-  clickout(event: Event) {
+  @HostListener('document:click', ['$event']) clickout(event: Event) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
-      // Clicked outside, perform your action here
       this.isHamburgerOpen = false;
     }
   }
 
+  @HostListener('click', ['$event'])
+  onClick(event: Event): void {
+    const target = event.target as HTMLElement;
+    if (this.isMobileLink(target)) {
+      this.toggleHamburger();
+    }
+  }
+
+  // * handlers
   toggleChildMenu(index: number) {
     this.childMenuState[index] =
       this.childMenuState[index] === 'open' ? 'closed' : 'open';
@@ -85,5 +101,12 @@ export class NavbarComponent {
       this.isHamburgerOpen = !this.isHamburgerOpen;
       body.classList.toggle('overflow-hidden');
     }
+  }
+
+  // * helpers
+  private isMobileLink(target: HTMLElement): boolean {
+    return this.mobileLinks
+      .toArray()
+      .some((link) => link.nativeElement === target);
   }
 }

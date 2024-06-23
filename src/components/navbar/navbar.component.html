@@ -6,7 +6,11 @@
 >
   <div
     class="navbar_container"
-    [ngClass]="isHamburgerOpen ? 'border-b-[1px] border-white/10 bg-[var(--color-dark)]' : ''"
+    [ngClass]="
+      isHamburgerOpen
+        ? 'border-b-[1px] border-white/10 bg-[var(--color-dark)]'
+        : ''
+    "
   >
     <div class="logo_wrapper" routerLink="">
       <img
@@ -97,20 +101,24 @@
       @for (link of menu; track $index) {
         @if (!link.path && link.children) {
           <li
-            class="navbar_menu_link_mobile"
+            class="link_mobile"
             (mouseenter)="toggleChildMenu($index)"
             (mouseleave)="toggleChildMenu($index)"
           >
-            <a [routerLink]="link.path" [fragment]="link.fragment">{{
-              link.label
-            }}</a>
+            <a
+              #mobileLink
+              [routerLink]="link.path"
+              [fragment]="link.fragment"
+              >{{ link.label }}</a
+            >
             <ul
               class="navbar_childmenu_mobile"
               [@toggleChildMenu]="childMenuState[$index] || 'closed'"
             >
               @for (childLink of link.children; track $index) {
-                <li>
+                <li class="link_mobile">
                   <a
+                    #mobileLink
                     [routerLink]="childLink.path"
                     [fragment]="childLink.fragment"
                   >
@@ -119,8 +127,9 @@
                   @if (childLink.children) {
                     <ul class="navbar_sub_childmenu_mobile">
                       @for (subChildLink of childLink.children; track $index) {
-                        <li>
+                        <li class="link_mobile">
                           <a
+                            #mobileLink
                             [routerLink]="subChildLink.path"
                             [fragment]="subChildLink.fragment"
                           >
@@ -136,16 +145,24 @@
           </li>
         } @else {
           @if (link.variant === "cta") {
-            <li class="navbar_menu_cta_mobile">
-              <app-cta-button type="link" [link]="link" variant="secondary">
+            <li class="cta_mobile">
+              <app-cta-button
+                #mobileLink
+                type="link"
+                [link]="link"
+                variant="secondary"
+              >
                 {{ link.label }}
               </app-cta-button>
             </li>
           } @else {
-            <li class="navbar_menu_link_mobile">
-              <a [routerLink]="link.path" [fragment]="link.fragment">{{
-                link.label
-              }}</a>
+            <li class="link_mobile">
+              <a
+                #mobileLink
+                [routerLink]="link.path"
+                [fragment]="link.fragment"
+                >{{ link.label }}</a
+              >
             </li>
           }
         }
