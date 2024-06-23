@@ -4,6 +4,7 @@ import { CardComponent } from '../../components/card/card.component';
 import { PageSectionComponent } from '../../components/page-section/page-section.component';
 import { PageContainerComponent } from '../../components/page-container/page-container.component';
 import { CirclesSectionComponent } from '../../components/circles-section/circles-section.component';
+import { BlocksSectionComponent } from '../../components/blocks_section/blocks_section.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { CirclesSectionComponent } from '../../components/circles-section/circle
     PageSectionComponent,
     PageContainerComponent,
     CirclesSectionComponent,
+    BlocksSectionComponent,
   ],
 })
 export class HomeComponent {
@@ -105,12 +107,37 @@ export class HomeComponent {
     },
     circles: {
       title: 'What our customer most frequently need?',
-      texts: [
+      items: [
         'We have an idea do not know how to turn it a reality',
         'Projects or Products are stucked and we do not know how to move forward.',
         "We need a solution but don't know where to start...",
         'Systems are getting more complex and it is not sustainable to manage them.',
         'Having our own IT team for the system is too expensive, we want System as a Service.',
+      ],
+    },
+    blocks: {
+      title: 'Technology Areas',
+      items: [
+        {
+          iconSrc: 'svg/agile-g.svg',
+          label: 'Agile',
+        },
+        {
+          iconSrc: 'svg/waterfall-g.svg',
+          label: 'Waterfall',
+        },
+        {
+          iconSrc: 'svg/hybrid-g.svg',
+          label: 'Hybrid',
+        },
+        {
+          iconSrc: 'svg/SAFe.svg',
+          label: 'Scaled Agiled Framework',
+        },
+        {
+          iconSrc: 'svg/LeSS.svg',
+          label: 'Lean Scaled Scrum',
+        },
       ],
     },
   };

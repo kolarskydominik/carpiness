@@ -14,7 +14,7 @@
   <app-page-container>
     <app-circles-section
       [title]="content.circles.title"
-      [texts]="content.circles.texts"
+      [items]="content.circles.items"
     ></app-circles-section>
   </app-page-container>
 </app-page-section>
@@ -32,6 +32,15 @@
       variant="h2"
     ></app-card>
   </app-page-container>
+</app-page-section>
+
+<app-page-section className="pt-24 md:mt-16 lg:mt-40">
+  <app-page-container>
+    <app-blocks-section
+      [title]="content.blocks.title"
+      [items]="content.blocks.items"
+    ></app-blocks-section
+  ></app-page-container>
 </app-page-section>
 
 <app-page-section
