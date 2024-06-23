@@ -3,13 +3,24 @@
 }
 
 .cta {
-  @apply rounded-full px-8 py-4 transition-all duration-300;
+  @apply rounded-full
+  block
+  px-8
+  py-4
+  transition-all
+  duration-300;
 }
 
 .primary {
-  @apply bg-black text-white hover:bg-[var(--color-hover)] hover:text-black
+  @apply bg-black
+  text-white
+  hover:bg-[var(--color-hover)]
+  hover:text-black;
 }
 
 .secondary {
-  @apply hover:bg-black hover:text-white bg-[var(--color-gray1)] text-black
+  @apply bg-[var(--color-gray1)]
+  text-black
+  hover:bg-black
+  hover:text-white;
 }

@@ -1,0 +1,37 @@
+<div class="flex flex-col md:flex-row gap-4 justify-center lg:gap-14">
+  <div class="grid gap-2 md:max-w-[530px]">
+    <h5 class="h5">{{ subtitle }}</h5>
+    <h1 class="h1" *ngIf="variant === 'h1'">{{ title }}</h1>
+    <h2 class="h2" *ngIf="variant === 'h2'">{{ title }}</h2>
+    <p class="paragraph">
+      {{ description }}
+    </p>
+  </div>
+  <div
+    class="flex flex-wrap flex-col xs:flex-row md:flex-col gap-4 md:gap-8 items-center
+      text-center xs:text-start md:text-center"
+  >
+    <h6 class="h6 xs:hidden md:block">{{ author.title }}</h6>
+    <img
+      [src]="author.avatarScr"
+      [alt]="author.avatarScr"
+      class="aspect-square w-36 object-cover rounded-full justify-self-end"
+    />
+    <div class="flex flex-col gap-1 md:gap-6">
+      <h6 class="h6 hidden xs:block md:hidden">{{ author.title }}</h6>
+      <h3 class="h3">{{ author.name }}</h3>
+      <h6 class="h6">{{ author.position }}</h6>
+      <div class="flex mt-4 justify-center xs:justify-start md:justify-center">
+        @if (author.link) {
+          <app-cta-button
+            [link]="{ label: 'Get in touch', path: author.link }"
+            type="link"
+            variant="primary"
+          >
+            Get in touch
+          </app-cta-button>
+        }
+      </div>
+    </div>
+  </div>
+</div>

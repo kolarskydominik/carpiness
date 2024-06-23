@@ -37,7 +37,7 @@ import {
           visibility: 'visible',
         }),
       ),
-      transition('closed <=> open', [animate('200ms ease-in-out')]),
+      transition('closed <=> open', [animate('400ms ease-in-out')]),
     ]),
   ],
 })

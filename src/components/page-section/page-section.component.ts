@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-section',
@@ -11,4 +11,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './page-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PageSectionComponent {}
+export class PageSectionComponent {
+  @Input() id?: string;
+
+}

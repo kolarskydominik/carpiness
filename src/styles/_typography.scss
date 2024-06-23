@@ -8,10 +8,13 @@
   --font-weight-regular: 400;
   --font-weight-medium: 500;
 
-  --font-size-paragraph: 1.125rem;
+  // https://royalfig.github.io/fluid-typography-calculator/
+  --font-size-paragraph: 1rem;
+  --font-size-paragraph: clamp(1rem, 0.9583333333333334rem + 0.20833333333333334vw, 1.125rem);
   --font-size-paragraph-sm: 0.875rem;
-
-  --font-size-h1: 4.3125rem;
+  
+  --font-size-h1: 4rem;
+  --font-size-h1: clamp(3rem, 2.5625rem + 2.1875vw, 4.3125rem);
   --font-size-h2: 3.4375rem;
   --font-size-h3: 2.75rem;
   --font-size-h4: 2.1875rem;
