@@ -20,7 +20,7 @@ import { PageContainerComponent } from '../../components/page-container/page-con
 export class HomeComponent {
   content = {
     solutions: {
-      id: 'solutions',
+      id: 'software-development',
       title: 'Software Development',
       subtitle: 'Solutions',
       description:
@@ -33,7 +33,7 @@ export class HomeComponent {
         link: 'contact',
       },
     },
-    software_development: {
+    delivery_excellence: {
       id: 'delivery-excellence',
       title: 'Delivery Excellence',
       subtitle: 'Software Development',
@@ -74,29 +74,30 @@ export class HomeComponent {
       },
     },
     testing_quality_assurance: {
-      id: 'testing-&-quality-assurance',
+      id: 'testing',
       title: 'Testing & Quality Assurance',
       subtitle: 'Software Development',
       description:
         "Software testing is the backbone of development, catching bugs early to save costs and safeguard user experience. It's a non-negotiable step that secures customer satisfaction and trust, giving products a competitive edge. Effective testing equals robust software, primed for market success.",
-        author: {
-          title: 'Garant',
-          name: 'John Doe',
-          avatarScr: 'images/avatar_mock3.jpg',
-          position: 'Senior software engeneering',
-        },
+      author: {
+        title: 'Garant',
+        name: 'John Doe',
+        avatarScr: 'images/avatar_mock3.jpg',
+        position: 'Senior software engeneering',
+      },
     },
     maintenance: {
       id: 'maintenance',
       title: 'Maintenance',
       subtitle: 'Software Development',
-      description: 'Justo turpis risus libero molestie. Sed cursus mauris pulvinar non et interdum pharetra ultricies. Facilisi fringilla venenatis egestas diam eu. Enim eros a consequat non cras viverra tincidunt. Sagittis viverra nulla sit turpis. Ac nisl pellentesque sapien dictum laoreet vestibulum nulla. Arcu dictum phasellus hendrerit sed varius elit felis felis. Eu facilisi ornare egestas venenatis ut pretium diam in. Ullamcorper urna viverra tellus pellentesque sed sapien mus.',
+      description:
+        'Justo turpis risus libero molestie. Sed cursus mauris pulvinar non et interdum pharetra ultricies. Facilisi fringilla venenatis egestas diam eu. Enim eros a consequat non cras viverra tincidunt. Sagittis viverra nulla sit turpis. Ac nisl pellentesque sapien dictum laoreet vestibulum nulla. Arcu dictum phasellus hendrerit sed varius elit felis felis. Eu facilisi ornare egestas venenatis ut pretium diam in. Ullamcorper urna viverra tellus pellentesque sed sapien mus.',
       author: {
         title: 'Garant',
         name: 'John Doe',
         avatarScr: 'images/avatar_mock2.jpg',
         position: 'Senior software engeneering',
       },
-    }
+    },
   };
 }

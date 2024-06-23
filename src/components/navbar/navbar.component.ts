@@ -50,7 +50,7 @@ export class NavbarComponent {
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('window:scroll', ['$event']) onScroll() {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 25) {
       this.isNavbarScrolled = true;
     } else {
       this.isNavbarScrolled = false;

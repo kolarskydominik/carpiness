@@ -10,7 +10,6 @@ export const menu: MenuItem[] = [
   {
     label: 'Solutions',
     path: '',
-    fragment: 'solutions',
     children: [
       {
         label: 'Software Development',
@@ -29,7 +28,7 @@ export const menu: MenuItem[] = [
           },
           { label: 'Implementation', path: '', fragment: 'implementation' },
           { label: 'Testing', path: '', fragment: 'testing' },
-          { label: 'Maintanance', path: '', fragment: 'maintanance' },
+          { label: 'Maintenance', path: '', fragment: 'maintenance' },
         ],
       },
       { label: 'Advisory', path: 'advisory' },

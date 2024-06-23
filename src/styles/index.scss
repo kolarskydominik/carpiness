@@ -8,10 +8,9 @@
 body {
   color: var(--color-fg);
   background-color: var(--color-bg);
-  padding-top: 6rem;
   min-height: 100dvh;
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 7rem;
 }
