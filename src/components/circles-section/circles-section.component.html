@@ -1,0 +1,14 @@
+<div>
+  <h2 class="h2">{{ title }}</h2>
+
+  <ul class=" mt-14 md:mt-16 flex gap-10 flex-wrap justify-center">
+    @for (item of texts; track $index) {
+      <li
+        class="grid place-content-center text-center size-48 px-10 bg-[var(--color-gray-10)]
+          rounded-full"
+      >
+        {{ item }}
+      </li>
+    }
+  </ul>
+</div>
