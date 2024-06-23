@@ -4,7 +4,7 @@ import { CardComponent } from '../../components/card/card.component';
 import { PageSectionComponent } from '../../components/page-section/page-section.component';
 import { PageContainerComponent } from '../../components/page-container/page-container.component';
 import { CirclesSectionComponent } from '../../components/circles-section/circles-section.component';
-import { BlocksSectionComponent } from '../../components/blocks_section/blocks_section.component';
+import { BlocksSectionComponent } from '../../components/blocks-section/blocks-section.component';
 
 @Component({
   selector: 'app-home',

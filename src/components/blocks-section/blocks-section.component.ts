@@ -5,8 +5,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'app-blocks-section',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './blocks_section.component.html',
-  styleUrl: './blocks_section.component.scss',
+  templateUrl: './blocks-section.component.html',
+  styleUrl: './blocks-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BlocksSectionComponent {
