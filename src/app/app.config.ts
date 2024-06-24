@@ -10,8 +10,7 @@ import {
 } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideAnimations } from '@angular/platform-browser/animations';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -30,6 +29,7 @@ export const appConfig: ApplicationConfig = {
       // withPreloading(PreloadAllModules),
       // withDebugTracing(),
     ),
-    provideAnimations(),
+    // provideAnimations(),
+    provideAnimationsAsync(),
   ],
 };

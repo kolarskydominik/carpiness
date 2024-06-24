@@ -7,6 +7,7 @@ import { CirclesSectionComponent } from '../../components/circles-section/circle
 import { BlocksSectionComponent } from '../../components/blocks-section/blocks-section.component';
 import { content } from '../../content';
 import { StackSectionComponent } from "../../components/stack-section/stack-section.component";
+import { StickyAnimationSectionComponent } from "../../components/sticky-animation-section/sticky-animation-section.component";
 
 @Component({
     selector: 'app-home',
@@ -21,7 +22,8 @@ import { StackSectionComponent } from "../../components/stack-section/stack-sect
         PageContainerComponent,
         CirclesSectionComponent,
         BlocksSectionComponent,
-        StackSectionComponent
+        StackSectionComponent,
+        StickyAnimationSectionComponent
     ]
 })
 export class HomeComponent {
