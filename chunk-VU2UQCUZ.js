@@ -1,2 +1,0 @@
-import{Sb as s,Wa as i,Xa as r,_ as a,kb as o,nb as c}from"./chunk-LFQKMYYM.js";var d=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=a({type:e,selectors:[["app-contact"]],standalone:!0,features:[c],decls:3,vars:0,template:function(n,l){n&1&&(i(0,"p"),o(1,"contact works!"),r(),o(2,`,
-`))},dependencies:[s],styles:["[_nghost-%COMP%]{display:block}"],changeDetection:0});let t=e;return t})(),u=d;export{d as ContactComponent,u as default};

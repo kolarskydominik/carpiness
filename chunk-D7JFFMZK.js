@@ -1,2 +1,0 @@
-import{Sb as c,Wa as a,Xa as s,_ as i,kb as o,nb as r}from"./chunk-LFQKMYYM.js";var u=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=i({type:e,selectors:[["app-about-us"]],standalone:!0,features:[r],decls:3,vars:0,template:function(n,m){n&1&&(a(0,"p"),o(1,"about-us works!"),s(),o(2,`,
-`))},dependencies:[c],styles:["[_nghost-%COMP%]{display:block}"],changeDetection:0});let t=e;return t})();export{u as AboutUsComponent};
