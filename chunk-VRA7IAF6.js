@@ -1,2 +1,0 @@
-import{Rb as c,Wa as a,Xa as i,_ as r,jb as o,mb as s}from"./chunk-HIXRXKAM.js";var d=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=r({type:e,selectors:[["app-careers"]],standalone:!0,features:[s],decls:3,vars:0,template:function(n,l){n&1&&(a(0,"p"),o(1,"careers works!"),i(),o(2,`,
-`))},dependencies:[c],styles:["[_nghost-%COMP%]{display:block}"],changeDetection:0});let t=e;return t})(),u=d;export{d as CareersComponent,u as default};
