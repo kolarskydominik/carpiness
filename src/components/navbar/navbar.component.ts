@@ -7,7 +7,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { MenuItem, menu } from '../../menu';
-import { RouterModule } from '@angular/router';
+import { RouterLinkActive, RouterModule } from '@angular/router';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
 import { HostListener } from '@angular/core';
 import {
@@ -24,7 +24,7 @@ import {
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterModule, CtaButtonComponent],
+  imports: [CommonModule, RouterModule, CtaButtonComponent, RouterLinkActive],
   animations: [
     trigger('toggleChildMenu', [
       state(

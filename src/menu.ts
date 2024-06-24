@@ -42,7 +42,7 @@ export const menu: MenuItem[] = [
   },
   {
     label: 'Industry',
-    path: '',
+    path: 'industry',
     children: [
       { label: 'Banking & Finance', path: '' },
       { label: 'Pharma', path: '' },

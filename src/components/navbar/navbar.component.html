@@ -39,7 +39,7 @@
     <!-- desktop -->
     <ul class="navbar_menu_desktop">
       @for (link of menu; track $index) {
-        @if (!link.path && link.children) {
+        @if (link.children) {
           <li
             class="navbar_menu_link"
             (mouseenter)="toggleChildMenu($index)"

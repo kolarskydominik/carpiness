@@ -120,6 +120,10 @@
   @apply lg:text-xl;
 }
 
+.link_active {
+  @apply border-black;
+}
+
 .navbar_childmenu {
   @apply absolute 
   left-0 
