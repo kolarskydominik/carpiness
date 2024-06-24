@@ -3,14 +3,15 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CtaButtonComponent } from "../cta-button/cta-button.component";
 
 @Component({
-  selector: 'app-sticky-animation-section',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './sticky-animation-section.component.html',
-  styleUrl: './sticky-animation-section.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-sticky-animation-section',
+    standalone: true,
+    templateUrl: './sticky-animation-section.component.html',
+    styleUrl: './sticky-animation-section.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, CtaButtonComponent]
 })
 export class StickyAnimationSectionComponent implements OnInit {
   ngOnInit() {

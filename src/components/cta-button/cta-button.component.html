@@ -1,11 +1,19 @@
 <ng-container *ngIf="type === 'link' && link">
-  <a [routerLink]="link.path" [fragment]="link.fragment" ngClass="cta {{variant}}">
+  <a
+    [routerLink]="link.path"
+    [fragment]="link.fragment"
+    [ngClass]="cn('cta', variant, className)"
+  >
     <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
   </a>
 </ng-container>
 
 <ng-container *ngIf="type === 'button'">
-  <button type="button" (click)="(click)" ngClass="cta {{variant}}">
+  <button
+    type="button"
+    (click)="(click)"
+    [ngClass]="cn('cta', variant, className)"
+  >
     <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
   </button>
 </ng-container>
