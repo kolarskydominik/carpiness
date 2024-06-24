@@ -7,6 +7,7 @@ import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
   imports: [RouterOutlet, RouterLinkWithHref, NavbarComponent, FooterComponent],
 })
 export class AppComponent {
