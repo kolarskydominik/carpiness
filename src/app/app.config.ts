@@ -7,6 +7,7 @@ import {
   withDebugTracing,
   withInMemoryScrolling,
   withPreloading,
+  withViewTransitions,
 } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -28,6 +29,7 @@ export const appConfig: ApplicationConfig = {
       inMemoryScrollingFeature,
       // withPreloading(PreloadAllModules),
       // withDebugTracing(),
+      withViewTransitions(),
     ),
     // provideAnimations(),
     provideAnimationsAsync(),
