@@ -9,6 +9,13 @@ type ContentType = {
   }[];
 };
 
+type TechnologiesType = {
+  title: string;
+  areas: {
+    title: string;
+    items: ContentType['items'];
+  }[];
+};
 @Component({
   selector: 'app-stack-section',
   standalone: true,
@@ -18,5 +25,5 @@ type ContentType = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StackSectionComponent {
-  @Input() content!: ContentType[];
+  @Input() content!: TechnologiesType;
 }

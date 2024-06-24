@@ -95,28 +95,29 @@ export const content = {
     title: 'Technology Areas',
     items: [
       {
-        iconSrc: 'icons/agile-g.svg',
+        iconSrc: 'svg/agile-g.svg',
         label: 'Agile',
       },
       {
-        iconSrc: 'icons/waterfall-g.svg',
+        iconSrc: 'svg/waterfall-g.svg',
         label: 'Waterfall',
       },
       {
-        iconSrc: 'icons/hybrid-g.svg',
+        iconSrc: 'svg/hybrid-g.svg',
         label: 'Hybrid',
       },
       {
-        iconSrc: 'icons/SAFe.svg',
+        iconSrc: 'svg/SAFe.svg',
         label: 'Scaled Agiled Framework',
       },
       {
-        iconSrc: 'icons/LeSS.svg',
+        iconSrc: 'svg/LeSS.svg',
         label: 'Lean Scaled Scrum',
       },
     ],
   },
   technologies: {
+    title: 'Technology Stack',
     areas: [
       {
         title: 'Ai',

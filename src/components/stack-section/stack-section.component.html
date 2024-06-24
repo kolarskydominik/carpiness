@@ -1,0 +1,25 @@
+<div class="grid gap-16">
+  <h2 class="h2">
+    {{ content.title }}
+  </h2>
+  <ul
+    class="flex flex-col md:grid md:grid-cols-[10rem_1fr] lg:grid-cols-[200px_1fr] gap-y-12
+      gap-x-4 lg:gap-x-6"
+  >
+    <li
+      *ngFor="let area of content.areas"
+      class="grid col-span-2 grid-cols-subgrid gap-4"
+    >
+      <h6 class="h6 max-w-52 w-full">{{ area.title }}</h6>
+      <ul class="flex gap-x-6 gap-y-4 flex-wrap">
+        <li
+          *ngFor="let tech of area.items"
+          class="flex gap-4 whitespace-nowrap"
+        >
+          <img [src]="tech.iconSrc" [alt]="tech.label" />
+          <span>{{ tech.label }}</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
