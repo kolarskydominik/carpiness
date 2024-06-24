@@ -6,7 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve --host 0.0.0.0",
     "build": "ng build",
-    "build:prod": "ng build --configuration production --base-href /carpiness/ --deploy-url /carpiness/",
+    "build:prod": "ng build --configuration=production --base-href=/carpiness/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
