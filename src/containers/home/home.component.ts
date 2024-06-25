@@ -9,6 +9,7 @@ import { content } from '../../content';
 import { StackSectionComponent } from "../../components/stack-section/stack-section.component";
 import { StickyAnimationSectionComponent } from "../../components/sticky-animation-section/sticky-animation-section.component";
 import { AccordionSectionComponent } from "../../components/accordion-section/accordion-section.component";
+import { CircleNavigationComponent } from "../../components/circle-navigation/circle-navigation.component";
 
 @Component({
     selector: 'app-home',
@@ -25,7 +26,8 @@ import { AccordionSectionComponent } from "../../components/accordion-section/ac
         BlocksSectionComponent,
         StackSectionComponent,
         StickyAnimationSectionComponent,
-        AccordionSectionComponent
+        AccordionSectionComponent,
+        CircleNavigationComponent
     ]
 })
 export class HomeComponent {

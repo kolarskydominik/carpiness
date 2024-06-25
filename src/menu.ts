@@ -21,7 +21,7 @@ export const menu: MenuItem[] = [
             fragment: 'delivery-excellence',
           },
           {
-            label: 'Analysis & Design',
+            label: 'Analysis & Design',
             path: '',
             fragment: 'analysis-&-design',
           },
@@ -42,7 +42,7 @@ export const menu: MenuItem[] = [
   {
     label: 'Industry',
     children: [
-      { label: 'Banking & Finance', path: 'industry' },
+      { label: 'Banking & Finance', path: 'industry' },
       { label: 'Pharma', path: 'industry' },
       { label: 'Telecomunication', path: 'industry' },
       { label: 'Technology', path: 'industry' },

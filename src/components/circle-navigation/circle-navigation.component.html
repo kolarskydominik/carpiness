@@ -1,0 +1,14 @@
+<ul class="flex gap-4 flex-nowrap overflow-x-scroll pb-4">
+  @for (item of menu; track $index) {
+    <li class="flex w-max shrink-0">
+      <a
+      routerLink="{{ item }}"
+        class="flex shrink-0 items-center text-center justify-center w-44 px-4 h-20 py-4
+          bg-[var(--color-gray-10)] rounded-full cursor-pointer"
+      >
+        {{ item.label }}
+      </a>
+      <img src="assets/development-arrow-1.svg" alt="arrow" />
+    </li>
+  }
+</ul>
