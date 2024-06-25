@@ -45,9 +45,7 @@
             (mouseenter)="toggleChildMenu($index)"
             (mouseleave)="toggleChildMenu($index)"
           >
-            <a [routerLink]="link.path" [fragment]="link.fragment">{{
-              link.label
-            }}</a>
+            <a>{{ link.label }}</a>
             <ul
               class="navbar_childmenu"
               [@toggleChildMenu]="childMenuState[$index] || 'closed'"
@@ -105,12 +103,7 @@
             (mouseenter)="toggleChildMenu($index)"
             (mouseleave)="toggleChildMenu($index)"
           >
-            <a
-              #mobileLink
-              [routerLink]="link.path"
-              [fragment]="link.fragment"
-              >{{ link.label }}</a
-            >
+            <a>{{ link.label }}</a>
             <ul
               class="navbar_childmenu_mobile"
               [@toggleChildMenu]="childMenuState[$index] || 'closed'"

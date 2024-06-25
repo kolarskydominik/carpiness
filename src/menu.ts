@@ -9,7 +9,6 @@ export type MenuItem = {
 export const menu: MenuItem[] = [
   {
     label: 'Solutions',
-    path: '',
     children: [
       {
         label: 'Software Development',
@@ -42,17 +41,16 @@ export const menu: MenuItem[] = [
   },
   {
     label: 'Industry',
-    path: 'industry',
     children: [
-      { label: 'Banking & Finance', path: '' },
-      { label: 'Pharma', path: '' },
-      { label: 'Telecomunication', path: '' },
-      { label: 'Technology', path: '' },
-      { label: 'Manufacturing', path: '' },
-      { label: 'HRIS', path: '' },
-      { label: 'Warehousing', path: '' },
-      { label: 'Entertainment', path: '' },
-      { label: 'Transportation', path: '' },
+      { label: 'Banking & Finance', path: 'industry' },
+      { label: 'Pharma', path: 'industry' },
+      { label: 'Telecomunication', path: 'industry' },
+      { label: 'Technology', path: 'industry' },
+      { label: 'Manufacturing', path: 'industry' },
+      { label: 'HRIS', path: 'industry' },
+      { label: 'Warehousing', path: 'industry' },
+      { label: 'Entertainment', path: 'industry' },
+      { label: 'Transportation', path: 'industry' },
     ],
   },
   { label: 'About Us', path: 'about-us' },
