@@ -2,15 +2,12 @@
   display: block;
 }
 .navbar {
-  @apply fixed
-  left-0
-  right-0
-  top-0
-  z-50
-  grid
+  @apply grid
+  h-16
   whitespace-nowrap
   transition-all
-  duration-300;
+  duration-300
+  md:h-28;
 }
 
 .navbar_container {
@@ -110,10 +107,10 @@
 
 .navbar_menu_link {
   @apply relative 
+  cursor-pointer
   border-b-2
   border-transparent
   transition-all
-  cursor-pointer
   duration-300;
 }
 
@@ -131,13 +128,13 @@
   top-5 
   z-50
   mt-4
-  opacity-0
-  grid 
-  w-min
+  grid
+  w-min 
   gap-3
   bg-[var(--color-dark)]
   p-4
-  text-white 
+  text-white
+  opacity-0 
   shadow-md;
 
   a:hover {

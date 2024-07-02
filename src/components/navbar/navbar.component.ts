@@ -51,21 +51,12 @@ export class NavbarComponent {
   @ViewChildren('mobileLink') mobileLinks!: QueryList<ElementRef>;
   menu: MenuItem[] = menu;
   childMenuState: { [key: number]: string } = {};
-  isNavbarScrolled: boolean = false;
   isHamburgerOpen: boolean = false;
 
 
   constructor(private elementRef: ElementRef) {}
 
   // * listeners
-  @HostListener('window:scroll', ['$event']) onScroll() {
-    if (window.scrollY > 25) {
-      this.isNavbarScrolled = true;
-    } else {
-      this.isNavbarScrolled = false;
-    }
-  }
-
   @HostListener('window:resize', ['$event']) onResize() {
     if (window.innerWidth > 768) {
       this.isHamburgerOpen = false;
