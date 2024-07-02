@@ -1,10 +1,10 @@
-<div class="my-40">
+<div class="mt-96 pb-60">
   <div class="circle_nav">
     <div class="circle_nav_wrapper">
       <ul class="circle_nav_container">
         @for (item of menu; track $index) {
           <li class="circle_nav_item">
-            <a routerLink="" [fragment]="item.fragment">
+            <a routerLink="" [fragment]="item.fragment" >
               {{ item.label }}
             </a>
             <!-- <img src="assets/development-arrow-1.svg" alt="arrow" /> -->

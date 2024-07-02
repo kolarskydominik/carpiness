@@ -23,6 +23,7 @@ bg-white;
   container-type: size;
   container-name: nav;
   @apply relative 
+  mt-20
   grid
   h-[200px]
   w-full
@@ -33,11 +34,13 @@ bg-white;
 
 .sticky {
   .circle_nav_container {
-    @apply my-0 
+    @apply no-scrollbar 
+    my-0
     flex
     h-28
     place-content-start
-    overflow-x-scroll;
+    overflow-x-auto
+    lg:overflow-x-visible;
   }
 }
 
@@ -45,7 +48,9 @@ bg-white;
   grid-area: 1/1;
   @apply flex
   shrink-0
-  flex-nowrap;
+  flex-nowrap
+  transition-transform
+  duration-1000;
 
   a {
     @apply flex
@@ -89,23 +94,25 @@ bg-white;
 
   a {
     @apply h-20 
-      w-44;
+    w-44
+    px-2
+    text-lg;
   }
 
   &:nth-child(1) {
-    transform: unset;
+    transform: rotate(0deg) translateY(0) rotate(0deg);
   }
   &:nth-child(2) {
-    transform: unset;
+    transform: rotate(0deg) translateY(0) rotate(0deg);
   }
   &:nth-child(3) {
-    transform: unset;
+    transform: rotate(0deg) translateY(0) rotate(0deg);
   }
   &:nth-child(4) {
-    transform: unset;
+    transform: rotate(0deg) translateY(0) rotate(0deg);
   }
   &:nth-child(5) {
-    transform: unset;
+    transform: rotate(0deg) translateY(0) rotate(0deg);
   }
   &:nth-child(6) {
     display: none;

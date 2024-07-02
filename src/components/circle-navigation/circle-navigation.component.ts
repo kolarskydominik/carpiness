@@ -25,7 +25,7 @@ export class CircleNavigationComponent implements AfterViewInit {
 
     let container = document.querySelector('.circle_nav');
     let items = gsap.utils.toArray('.circle_nav_item');
-    
+
     ScrollTrigger.create({
       trigger: container,
       start: 'top top',
@@ -33,6 +33,7 @@ export class CircleNavigationComponent implements AfterViewInit {
       onEnter: () => this.animateToLine(items),
       onEnterBack: () => this.animateToCircle(items),
       onLeaveBack: () => this.resetToInitial(items),
+      onLeave: () => this.resetToInitial(items),
     });
   }
 
