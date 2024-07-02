@@ -1,14 +1,19 @@
-<ul class="flex gap-4 flex-nowrap overflow-x-scroll pb-4">
-  @for (item of menu; track $index) {
-    <li class="flex w-max shrink-0">
-      <a
-      routerLink="{{ item }}"
-        class="flex shrink-0 items-center text-center justify-center w-44 px-4 h-20 py-4
-          bg-[var(--color-gray-10)] rounded-full cursor-pointer"
-      >
-        {{ item.label }}
-      </a>
-      <img src="assets/development-arrow-1.svg" alt="arrow" />
-    </li>
-  }
-</ul>
+<div class="my-40">
+  <div class="circle_nav">
+    <div class="circle_nav_wrapper">
+      <ul class="circle_nav_container">
+        @for (item of menu; track $index) {
+          <li class="circle_nav_item">
+            <a routerLink="" [fragment]="item.fragment">
+              {{ item.label }}
+            </a>
+            <!-- <img src="assets/development-arrow-1.svg" alt="arrow" /> -->
+          </li>
+        }
+        <h4 class="circle_nav_item justify-center items-center text-center h4">
+          Software<br />Circus
+        </h4>
+      </ul>
+    </div>
+  </div>
+</div>
