@@ -17,9 +17,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   styleUrl: './circle-navigation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class CircleNavigationComponent implements AfterViewInit {
   menu = menu[0]!.children![0].children!;
-
+  
   ngAfterViewInit(): void {
     gsap.registerPlugin(ScrollTrigger);
 
