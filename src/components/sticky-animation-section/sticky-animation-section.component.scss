@@ -2,6 +2,11 @@
   display: block;
 }
 
-.grid_area {
+.svg_container {
+  @apply relative grid max-w-[45rem];
+}
+
+.svg {
   grid-area: 1/1;
+  @apply h-auto w-full;
 }

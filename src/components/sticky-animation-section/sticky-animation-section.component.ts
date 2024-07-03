@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,30 +19,26 @@ import { RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, CtaButtonComponent, RouterModule],
 })
-export class StickyAnimationSectionComponent implements OnInit {
-  ngOnInit() {
+export class StickyAnimationSectionComponent implements AfterViewInit {
+  ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.scroll_1', {
-      scrollTrigger: {
-        trigger: '.scroll_1',
-        start: 'top 100',
-        toggleActions: 'play none reverse none',
-        pin: true,
-        scrub: 1,
-      },
-      opacity: 0,
-    });
+    // Set initial states
+    gsap.set('#svg1', { opacity: 1 });
+    gsap.set('#svg2', { opacity: 0 });
 
-    gsap.to('.scroll_2', {
-      scrollTrigger: {
-        trigger: '.scroll_2',
-        start: 'top 100',
-        toggleActions: 'play none reverse none',
-        pin: true,
-        scrub: 1,
+    // Create the scroll-based animation
+    ScrollTrigger.create({
+      trigger: '.svg_container',
+      start: 'top top',
+      markers: true,
+      pin: true,
+      scrub: true,
+      onUpdate: (self) => {
+        let progress = self.progress;
+        gsap.to('#svg1', { opacity: 1 - progress });
+        gsap.to('#svg2', { opacity: progress });
       },
-      opacity: 1,
     });
   }
 }
