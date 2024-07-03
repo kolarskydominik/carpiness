@@ -20,8 +20,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 })
 export class CircleNavigationComponent implements AfterViewInit {
   menu = menu[0]!.children![0].children!;
-
-  navigation!: Element | null;
   sections!: NodeListOf<Element>;
 
   private delay: any;
@@ -37,11 +35,8 @@ export class CircleNavigationComponent implements AfterViewInit {
       trigger: container,
       start: 'top top',
       end: 'top top',
-      markers: true,
       onEnter: () => this.animateToLine(items),
       onEnterBack: () => this.animateToCircle(items),
-      onLeaveBack: () => this.animateToCircle(items),
-      onLeave: () => this.animateToLine(items),
     });
 
     // nav hide/show in the end
@@ -67,6 +62,17 @@ export class CircleNavigationComponent implements AfterViewInit {
     }
 
     this.delay = setTimeout(() => this.checkVisibleSection(), 50);
+  }
+
+  // scroll vertically in navigation
+  @HostListener('click', ['$event'])
+  onClick(event: MouseEvent): void {
+    const link = event.target as HTMLElement;
+
+    const circle_nav_container = document.querySelector('.circle_nav_wrapper');
+    if (link && circle_nav_container) {
+      this.scrollIntoViewHorizontally(circle_nav_container, link.parentElement);
+    }
   }
 
   // handelrs for circle navigation
@@ -98,9 +104,23 @@ export class CircleNavigationComponent implements AfterViewInit {
 
         // Add the active class
         link.classList.add('active');
+        const circle_nav_container = document.querySelector('.circle_nav_wrapper');
+        this.scrollIntoViewHorizontally(circle_nav_container, link.parentElement);
       }
     }
   }
+
+  scrollIntoViewHorizontally(container: any, child: any): void {
+    const childCenter = child.offsetLeft + child.offsetWidth / 2;
+    const containerCenter = container.offsetWidth / 2;
+    const targetScrollLeft = childCenter - containerCenter;
+
+    container.scrollTo({
+      left: targetScrollLeft,
+      behavior: 'smooth',
+    });
+  }
+
   animateToLine(items: any[]) {
     document.querySelector('.circle_nav')?.classList.add('sticky');
   }

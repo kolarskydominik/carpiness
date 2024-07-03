@@ -19,14 +19,20 @@ bg-white;
   max-w-[min(1200px,100%)];
 }
 
+.sticky .circle_nav_wrapper {
+  @apply no-scrollbar
+  overflow-x-auto
+  lg:overflow-x-visible;
+}
+
 .circle_nav_container {
   container-type: size;
   container-name: nav;
   @apply relative 
+  mx-auto
   mt-20
   grid
-  h-[200px]
-  w-full
+  h-[200px] 
   flex-nowrap
   place-content-center
   gap-4;
@@ -34,13 +40,13 @@ bg-white;
 
 .sticky {
   .circle_nav_container {
+    container-type: unset;
+    container-name: unset;
     @apply no-scrollbar 
     my-0
     flex
     h-28
-    place-content-start
-    overflow-x-auto
-    lg:overflow-x-visible;
+    place-content-start;
   }
 }
 
@@ -65,11 +71,10 @@ bg-white;
       text-xl
       leading-tight;
 
-      &.active {
-        @apply 
-        text-white
-        bg-black;
-      }
+    &.active {
+      @apply bg-black
+        text-white;
+    }
   }
 
   img {
