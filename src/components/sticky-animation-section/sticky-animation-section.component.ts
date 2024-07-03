@@ -31,7 +31,6 @@ export class StickyAnimationSectionComponent implements AfterViewInit {
     ScrollTrigger.create({
       trigger: '.svg_container',
       start: 'top top',
-      markers: true,
       pin: true,
       scrub: true,
       onUpdate: (self) => {
