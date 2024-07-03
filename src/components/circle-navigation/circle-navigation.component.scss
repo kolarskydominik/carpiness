@@ -64,6 +64,12 @@ bg-white;
       text-center
       text-xl
       leading-tight;
+
+      &.active {
+        @apply 
+        text-white
+        bg-black;
+      }
   }
 
   img {
