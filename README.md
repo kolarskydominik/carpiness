@@ -37,7 +37,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   - ✅ content stored in content.ts
 - ✅ Components based structure
 - ✅ Containers folder for pages
-- ⬜️ Circled navigation for sections
-  - ⬜️ animated transition from circle to row
-  - ⬜️ active state
+- ✅ Circled navigation for sections
+  - ✅ animated transition from circle to row
+  - ✅ active state
 - ⬜️ - Enter animations for sections on scroll

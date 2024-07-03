@@ -29,14 +29,13 @@ export class CircleNavigationComponent implements AfterViewInit {
     // animation circle <-> line
     gsap.registerPlugin(ScrollTrigger);
     let container = document.querySelector('.circle_nav');
-    let items = gsap.utils.toArray('.circle_nav_item');
 
     ScrollTrigger.create({
       trigger: container,
       start: 'top top',
       end: 'top top',
-      onEnter: () => this.animateToLine(items),
-      onEnterBack: () => this.animateToCircle(items),
+      onEnter: () => this.animateToLine(),
+      onEnterBack: () => this.animateToCircle(),
     });
 
     // nav hide/show in the end
@@ -104,8 +103,13 @@ export class CircleNavigationComponent implements AfterViewInit {
 
         // Add the active class
         link.classList.add('active');
-        const circle_nav_container = document.querySelector('.circle_nav_wrapper');
-        this.scrollIntoViewHorizontally(circle_nav_container, link.parentElement);
+        const circle_nav_container = document.querySelector(
+          '.circle_nav_wrapper',
+        );
+        this.scrollIntoViewHorizontally(
+          circle_nav_container,
+          link.parentElement,
+        );
       }
     }
   }
@@ -121,10 +125,10 @@ export class CircleNavigationComponent implements AfterViewInit {
     });
   }
 
-  animateToLine(items: any[]) {
+  animateToLine() {
     document.querySelector('.circle_nav')?.classList.add('sticky');
   }
-  animateToCircle(items: any[]) {
+  animateToCircle() {
     document.querySelector('.circle_nav')?.classList.remove('sticky');
     this.nav.querySelectorAll(`a`)?.forEach((item) => {
       item.classList.remove('active');
