@@ -45,8 +45,10 @@ bg-white;
     @apply no-scrollbar 
     my-0
     flex
-    h-28
-    place-content-start;
+    h-20
+    place-content-start
+    px-2
+    md:h-28;
   }
 }
 
@@ -129,14 +131,15 @@ bg-white;
 .sticky {
   .circle_nav_item {
     @apply flex
-  w-max
-  items-center;
+    w-max
+    items-center;
 
     a {
-      @apply h-20 
-    w-44
-    px-2
-    text-lg;
+      @apply h-8
+      w-44 
+      px-2
+      text-lg
+      md:h-16;
     }
 
     &:nth-child(1) {
@@ -159,7 +162,8 @@ bg-white;
     }
   }
   .circel_nav_arrow {
-    @apply size-12;
+    @apply size-10
+    md:size-12;
 
     &:nth-child(2) {
       transform: rotate(0deg) translateY(0);

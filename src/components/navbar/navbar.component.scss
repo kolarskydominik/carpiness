@@ -2,7 +2,9 @@
   display: block;
 }
 .navbar {
-  @apply grid
+  @apply relative
+  z-50
+  grid
   h-16
   whitespace-nowrap
   transition-all
